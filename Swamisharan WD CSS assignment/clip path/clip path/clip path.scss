@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+.main {
+    width: auto;
+    height: 92vh;
+    position: relative;
+    background: url(nature-landscape-paragliding-aerial-view-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 80%,
+            50% 100%,
+            0 80%);
+
+
+}
+
+header,
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    display: flex;
+    gap: 60px;
+}
+
+
+
+.logo {
+    border: 2px solid white;
+    display: flex;
+    margin-top: 10px;
+    width: 60px;
+    height: 35px;
+    justify-content: space-between;
+    padding: px;
+    font-size: x-large;
+}
+
+.l {
+    background-color: white;
+    color:#FF0000;
+}
+
+li {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-sky {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin-top: 150px;
+    font-size: large;
+}
+
+.main-sky p {
+    width: 300px;
+    font-size: xx-small;
+}
+
+.border-main {
+    display: flex;
+    gap: 10px;
+
+}
+
+.sky-border {
+
+    border: 1px solid;
+    width: 50px;
+    height: 0;
+
+}
+
+.sky-dot {
+    border: 3px solid #FF0000;
+    border-radius: 50%;
+}
+
+.button-main {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    border: 1px solid;
+    height: 30px;
+    width: 130px;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 8px;
+
+}
+
+a:hover {
+    color:  #FF0000;
+}
+
+.button:hover,
+.box:hover {
+    background-color:  #FF0000;
+
+}
+
+.box-main {
+    display: flex;
+
+
+}
+
+.box {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    padding-right: 10px;
+    /* text-align: center; */
+
+}
+
+.box-1 {
+    position: absolute;
+    left: 0;
+    top: 200px;
+}
+
+.box-2 {
+    position: absolute;
+    right: 0;
+    top: 200px;
+}
+
+.buttonn {
+    width: 30px;
+    height: 30px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    left: 49%;
+    top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main-2 {
+    position: relative;
+    /* background-color: black; */
+}
+.main-2-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    
+    
+    
+    
+
+}
+.main-2-in p{
+    font-size: xx-small;
+    width: 150px;
+
+}
+
+
+.content {
+    /* display: flex; */
+    height: 200px;
+    width: 150px;
+    margin-top: 50px;
+
+}
+.abc {
+    width: 35px;
+    height: 35px;
+    border: 2px solid ;
+    color: black;
+    padding: 5px;
+    margin-left: 50px;
+    position: relative;       
+}
+
+
+.xyz {
+    border-bottom: 1px solid;
+    width: 50px;
+    height: 1px;
+    margin-left: 50px;
+}
+.main-2-in p,
+.main-2-in h4,
+.xyz{
+    padding-top: 10px;
+    color: black;
+}
+.abc i{
+    /* color: black; */
+}
+.abc:hover {
+    transform: rotate(45deg);
+    color: #FF0000;
+   
+}
+.abc:hover{
+color:#FF0000;
+}
+.pqr-1 i{
+    color: black;
+   position: absolute;
+   top: 60px;
+   left: 315px;
+  
+}
+.pqr-2 i{
+    color: black;
+   position: absolute;
+   top: 60px;
+   left: 515px;
+  
+}
+.pqr-3 i{
+    color: black;
+   position: absolute;
+   top: 60px;
+   left: 720px;
+  
+}
+.pqr-4 i{
+    color: black;
+   position: absolute;
+   top: 60px;
+   left: 915px;
+  
+}
