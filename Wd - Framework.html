@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Lightbox Gallery</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .gallery {
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h2 class="my-4">Bootstrap Lightbox Gallery</h2>
+        <div class="row gallery">
+            <!-- Gallery Images -->
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://media.istockphoto.com/id/1487894858/photo/candlestick-chart-and-data-of-financial-market.jpg?s=612x612&w=0&k=20&c=wZ6vVmbm4BV2JOePSnNNz-0aFVOJZ0P9nhdeOMGUg5I=">
+                    <img src="https://media.istockphoto.com/id/1487894858/photo/candlestick-chart-and-data-of-financial-market.jpg?s=612x612&w=0&k=20&c=wZ6vVmbm4BV2JOePSnNNz-0aFVOJZ0P9nhdeOMGUg5I=" alt="Image 1" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://www.adobe.com/creativecloud/photography/discover/media_131179edca5f92db203e2b78cb8a308605afbc958.png?width=750&format=png&optimize=medium">
+                    <img src="https://www.adobe.com/creativecloud/photography/discover/media_131179edca5f92db203e2b78cb8a308605afbc958.png?width=750&format=png&optimize=medium" alt="Image 2" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://media.istockphoto.com/id/1353379172/photo/cute-little-african-american-girl-looking-at-camera.jpg?s=612x612&w=0&k=20&c=RCOYytwS2nMGfEb80oyeiCcIiqMQu6wnTluAaxMBye4=">
+                    <img src="https://media.istockphoto.com/id/1353379172/photo/cute-little-african-american-girl-looking-at-camera.jpg?s=612x612&w=0&k=20&c=RCOYytwS2nMGfEb80oyeiCcIiqMQu6wnTluAaxMBye4=" alt="Image 3" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://static.desygner.com/wp-content/uploads/sites/13/2022/05/04141642/Free-Stock-Photos-01.jpg">
+                    <img src="https://static.desygner.com/wp-content/uploads/sites/13/2022/05/04141642/Free-Stock-Photos-01.jpg" alt="Image 4" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://assets.entrepreneur.com/content/3x2/2000/20191009140007-GettyImages-1053962188.jpeg">
+                    <img src="https://assets.entrepreneur.com/content/3x2/2000/20191009140007-GettyImages-1053962188.jpeg" alt="Image 5" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://cdn.create.vista.com/api/media/small/211720736/stock-photo-multiethnic-group-young-smiling-businessmen-standing-light-office">
+                    <img src="https://cdn.create.vista.com/api/media/small/211720736/stock-photo-multiethnic-group-young-smiling-businessmen-standing-light-office" alt="Image 6" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://images.nappy.co/photo/vgWhdAWHariGtbjSJKkYD.jpg?h=750&w=1260&cs=srgb&fm=jpg">
+                    <img src="https://images.nappy.co/photo/vgWhdAWHariGtbjSJKkYD.jpg?h=750&w=1260&cs=srgb&fm=jpg" alt="Image 7" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://img.etimg.com/thumb/width-420,height-315,imgsize-110642,resizemode-75,msid-117608430/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-tuesday.jpg">
+                    <img src="https://img.etimg.com/thumb/width-420,height-315,imgsize-110642,resizemode-75,msid-117608430/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-tuesday.jpg" alt="Image 8" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="https://www.stockvault.net/data/2019/08/31/269064/thumb16.jpg">
+                    <img src="https://www.stockvault.net/data/2019/08/31/269064/thumb16.jpg" alt="Image 9" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid" alt="Large Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom jQuery for Lightbox -->
+    <script>
+        $(document).ready(function(){
+            // When clicking on an image, update modal image src
+            $('[data-bs-toggle="modal"]').click(function(){
+                let imgSrc = $(this).attr("data-img");
+                $("#modalImage").attr("src", imgSrc);
+            });
+        });
+    </script>
+</body>
+</html>
