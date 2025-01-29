@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #6a1b9a; /* Purple background */
+            margin: 0;
+        }
+
+        .converter-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #6a1b9a; /* Purple text for the heading */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333; /* Dark gray for labels */
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #9c27b0; /* Purple button */
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+        }
+
+        button:hover {
+            background-color: #7b1fa2; /* Darker purple on hover */
+            transform: scale(1.05); /* Slightly enlarge the button */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #6a1b9a; /* Purple text for the result */
+        }
+    </style>
+</head>
+<body>
+    <div class="converter-container">
+        <h1>CURRENCY CONVERTER</h1>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" value="100">
+        
+        <label for="fromCurrency">From:</label>
+        <select id="fromCurrency">
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+        </select>
+        
+        <label for="toCurrency">To:</label>
+        <select id="toCurrency">
+            <option value="INR">INR</option>
+            <option value="USD">USD</option>
+        </select>
+        
+        <button id="convertBtn">Convert</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Internal JavaScript
+
+        // Exchange rates (hardcoded for simplicity)
+        const exchangeRates = {
+            USD: { INR: 82.49 },
+            INR: { USD: 0.012 }
+        };
+
+        // Function to convert currency
+        function convertCurrency(amount, fromCurrency, toCurrency) {
+            if (fromCurrency === toCurrency) {
+                return amount; // No conversion needed
+            }
+            const rate = exchangeRates[fromCurrency][toCurrency];
+            if (!rate) {
+                throw new Error("Invalid currency conversion");
+            }
+            return (amount * rate).toFixed(2);
+        }
+
+        // Function to handle the conversion process
+        function handleConversion() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const fromCurrency = document.getElementById('fromCurrency').value;
+            const toCurrency = document.getElementById('toCurrency').value;
+
+            if (isNaN(amount) || amount <= 0) {
+                alert("Please enter a valid amount.");
+                return;
+            }
+
+            try {
+                const result = convertCurrency(amount, fromCurrency, toCurrency);
+                document.getElementById('result').innerText = `${amount} ${fromCurrency} = ${result} ${toCurrency}`;
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+        // Attach event listener to the convert button
+        document.getElementById('convertBtn').addEventListener('click', handleConversion);
+    </script>
+</body>
+</html>
