@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shopping Cart with jQuery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .item-details {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls button {
+            padding: 5px 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .quantity-controls button:hover {
+            background-color: #218838;
+        }
+        .cart-total {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+
+    <div class="item" data-price="10">
+        <div class="item-details">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/355068045/LM/XC/UW/199268574/coca-cola-cold-drink-bottle-size-500-ml-for-instant-refreshment.jpg" alt="Item 1">
+            <span>Item 1 - $10</span>
+        </div>
+        <div class="quantity-controls">
+            <button class="decrease">-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+        </div>
+    </div>
+
+    <div class="item" data-price="20">
+        <div class="item-details">
+            <img src="https://m.media-amazon.com/images/I/71Y7pDHbi8L.jpg" alt="Item 2">
+            <span>Item 2 - $20</span>
+        </div>
+        <div class="quantity-controls">
+            <button class="decrease">-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+        </div>
+    </div>
+
+    <div class="item" data-price="15">
+        <div class="item-details">
+            <img src="https://m.media-amazon.com/images/I/61QYq3SwS9L.jpg" alt="Item 3">
+            <span>Item 3 - $15</span>
+        </div>
+        <div class="quantity-controls">
+            <button class="decrease">-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+        </div>
+    </div>
+
+    <div class="item" data-price="25">
+        <div class="item-details">
+            <img src="https://gropharm.in/wp-content/uploads/2024/05/51OLGv74V-L.jpg" alt="Item 4">
+            <span>Item 4 - $25</span>
+        </div>
+        <div class="quantity-controls">
+            <button class="decrease">-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+        </div>
+    </div>
+
+    <div class="item" data-price="30">
+        <div class="item-details">
+            <img src="https://images.jdmagicbox.com/quickquotes/images_main/dettol-liquid-hand-wash-refill-original-1500-ml-and-dettol-liquid-soap-jar-original-900-ml-240665301-cnsmxg9z.jpg" alt="Item 5">
+            <span>Item 5 - $30</span>
+        </div>
+        <div class="quantity-controls">
+            <button class="decrease">-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+        </div>
+    </div>
+
+    <div class="cart-total">
+        Total Items: <span id="itemCount">0</span><br>
+        Total Price: $<span id="totalPrice">0</span>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let itemCount = 0;
+            let totalPrice = 0;
+
+            $('.increase').click(function() {
+                const item = $(this).closest('.item');
+                const price = parseInt(item.data('price'));
+                const quantityElem = item.find('.quantity');
+                let quantity = parseInt(quantityElem.text()) + 1;
+
+                quantityElem.text(quantity);
+                itemCount++;
+                totalPrice += price;
+
+                $('#itemCount').text(itemCount);
+                $('#totalPrice').text(totalPrice);
+            });
+
+            $('.decrease').click(function() {
+                const item = $(this).closest('.item');
+                const price = parseInt(item.data('price'));
+                const quantityElem = item.find('.quantity');
+                let quantity = parseInt(quantityElem.text());
+
+                if (quantity > 0) {
+                    quantity--;
+                    quantityElem.text(quantity);
+                    itemCount--;
+                    totalPrice -= price;
+
+                    $('#itemCount').text(itemCount);
+                    $('#totalPrice').text(totalPrice);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
