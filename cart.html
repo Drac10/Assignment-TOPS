@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .item-details {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls button {
+            padding: 5px 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .quantity-controls button:hover {
+            background-color: #218838;
+        }
+        .cart-total {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+
+    <div class="item" data-price="10">
+        <div class="item-details">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/355068045/LM/XC/UW/199268574/coca-cola-cold-drink-bottle-size-500-ml-for-instant-refreshment.jpg" alt="Item 1">
+            <span>Item 1 - $10</span>
+        </div>
+        <div class="quantity-controls">
+            <button onclick="updateQuantity(10, -1, 0)">-</button>
+            <span id="quantity-1">0</span>
+            <button onclick="updateQuantity(10, 1, 0)">+</button>
+        </div>
+    </div>
+
+    <div class="item" data-price="20">
+        <div class="item-details">
+            <img src="https://m.media-amazon.com/images/I/71Y7pDHbi8L.jpg" alt="Item 2">
+            <span>Item 2 - $20</span>
+        </div>
+        <div class="quantity-controls">
+            <button onclick="updateQuantity(20, -1, 1)">-</button>
+            <span id="quantity-2">0</span>
+            <button onclick="updateQuantity(20, 1, 1)">+</button>
+        </div>
+    </div>
+
+    <div class="item" data-price="15">
+        <div class="item-details">
+            <img src="https://m.media-amazon.com/images/I/61QYq3SwS9L.jpg" alt="Item 3">
+            <span>Item 3 - $15</span>
+        </div>
+        <div class="quantity-controls">
+            <button onclick="updateQuantity(15, -1, 2)">-</button>
+            <span id="quantity-3">0</span>
+            <button onclick="updateQuantity(15, 1, 2)">+</button>
+        </div>
+    </div>
+
+    <div class="item" data-price="25">
+        <div class="item-details">
+            <img src="https://gropharm.in/wp-content/uploads/2024/05/51OLGv74V-L.jpg" alt="Item 4">
+            <span>Item 4 - $25</span>
+        </div>
+        <div class="quantity-controls">
+            <button onclick="updateQuantity(25, -1, 3)">-</button>
+            <span id="quantity-4">0</span>
+            <button onclick="updateQuantity(25, 1, 3)">+</button>
+        </div>
+    </div>
+
+    <div class="item" data-price="30">
+        <div class="item-details">
+            <img src="https://images.jdmagicbox.com/quickquotes/images_main/dettol-liquid-hand-wash-refill-original-1500-ml-and-dettol-liquid-soap-jar-original-900-ml-240665301-cnsmxg9z.jpg" alt="Item 5">
+            <span>Item 5 - $30</span>
+        </div>
+        <div class="quantity-controls">
+            <button onclick="updateQuantity(30, -1, 4)">-</button>
+            <span id="quantity-5">0</span>
+            <button onclick="updateQuantity(30, 1, 4)">+</button>
+        </div>
+    </div>
+
+    <div class="cart-total">
+        Total Items: <span id="itemCount">0</span><br>
+        Total Price: $<span id="totalPrice">0</span>
+    </div>
+
+    <script>
+        let itemCount = 0;
+        let totalPrice = 0;
+        const quantities = [0, 0, 0, 0, 0];
+
+        function updateQuantity(price, change, index) {
+            if (quantities[index] + change >= 0) {
+                quantities[index] += change;
+                itemCount += change;
+                totalPrice += price * change;
+
+                document.getElementById(`quantity-${index + 1}`).textContent = quantities[index];
+                document.getElementById('itemCount').textContent = itemCount;
+                document.getElementById('totalPrice').textContent = totalPrice;
+            }
+        }
+    </script>
+</body>
+</html>
