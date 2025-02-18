@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e6e6e6;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+        .gallery {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>MEGA<span style="color:#2196F3;">ZZINE</span> ONLINE</header>
+    <nav>
+        <ul>
+            <li><a href="Magazine.html">HOME</a></li>
+            <li><a href="articles.html">ARTICLES</a></li>
+            <li><a href="Photos.html">PHOTOS</a></li>
+            <li><a href="community.html">COMMUNITY</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="gallery">
+        <img src="https://i.insider.com/5980b7ca87543302234a1a57?width=800&format=jpeg&auto=webp" alt="Photo 1">
+        <img src="https://webcdn.smint.io/media/1534471.jpg" alt="Photo 2">
+        <img src="https://static.desygner.com/wp-content/uploads/sites/13/2022/05/04141642/Free-Stock-Photos-01.jpg" alt="Photo 3">
+        <img src="https://static.desygner.com/wp-content/uploads/sites/13/2022/05/04141642/Free-Stock-Photos-01.jpg" alt="Photo 4">
+        <img src="https://media.istockphoto.com/id/1480574526/photo/happy-multigenerational-people-having-fun-sitting-on-grass-in-a-public-park.webp?b=1&s=612x612&w=0&k=20&c=pFM42auh4hBX6Srn2JS8xiLOqWxo2nfC5_GSZMAh6y8=" alt="Photo 5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZta0U7M_alZCKb-Og3MCR-vAyuxENLQXNYw&s" alt="Photo 6">
+        <img src="https://www.stockvault.net/data/2020/01/18/272608/thumb16.jpg" alt="Photo 7">
+        <img src="https://media.istockphoto.com/id/1346125184/photo/group-of-successful-multiethnic-business-team.jpg?s=612x612&w=0&k=20&c=5FHgRQZSZed536rHji6w8o5Hco9JVMRe8bpgTa69hE8=" alt="Photo 8">
+        <img src="https://blog.thenounproject.com/wp-content/uploads/2021/10/Happy-child-throwing-arms-up-in-the-air-at-the-beach-1024x683.jpg" alt="Photo 9">
+    </div>
+    <footer>
+        &copy; 2025 Megazzine. All rights reserved.
+    </footer>
+</body>
+</html>
